@@ -52,7 +52,7 @@ const CardHeader = styled.div`
   background: linear-gradient(90deg, #ffe4e9, #fcd1d9);
   padding: 40px;
   text-align: center;
-  border-bottom: 5px solid #ffffff; /* Thay vàng thành trắng */
+  border-bottom: 5px solid #ffffff;
   position: relative;
   overflow: hidden;
 
@@ -111,11 +111,11 @@ const GraduateInfo = styled.div`
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    border: 8px solid #ffffff; /* Thay vàng thành trắng */
+    border: 8px solid #ffffff;
     margin: 0 auto 25px;
     position: relative;
-    background: url('/im.jpg') center/cover; /* Hình ảnh tại public/im.jpg */
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 50px rgba(252, 209, 217, 0.3); /* Thay vàng thành trắng trong glow */
+    background: url('/im.jpg') center/cover;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 50px rgba(252, 209, 217, 0.3);
     animation: glow 2.5s infinite;
 
     &:before {
@@ -165,7 +165,7 @@ const GraduateInfo = styled.div`
     .photo-frame {
       width: 180px;
       height: 180px;
-      border: 6px solid #ffffff; /* Thay vàng thành trắng */
+      border: 6px solid #ffffff;
     }
     h2 { font-size: 1.8rem; }
     p { font-size: 1.1rem; }
@@ -232,7 +232,7 @@ const CardFooter = styled.div`
   background: linear-gradient(90deg, #ffe4e9, #fcd1d9);
   padding: 25px;
   text-align: center;
-  border-top: 5px solid #ffffff; /* Thay vàng thành trắng */
+  border-top: 5px solid #ffffff;
 
   p {
     font-size: 1rem;
@@ -298,7 +298,6 @@ const App = () => {
     const newPetals = Array.from({ length: 8 }).map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
-      delay: `${Math.random() * 10}s`,
       duration: `${5 + Math.random() * 5}s`,
     }));
     setPetals(newPetals);
@@ -324,7 +323,6 @@ const App = () => {
               className="petal"
               style={{
                 left: petal.left,
-                animationDelay: petal.delay,
                 animationDuration: petal.duration,
               }}
             >
@@ -356,7 +354,6 @@ const App = () => {
               </p>
             </Message>
           </CardBody>
-
         </Card>
       </InvitationContainer>
     </>
