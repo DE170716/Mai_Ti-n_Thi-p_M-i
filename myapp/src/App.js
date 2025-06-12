@@ -228,46 +228,6 @@ const Message = styled.div`
   }
 `;
 
-const CardFooter = styled.div`
-  background: linear-gradient(90deg, #ffe4e9, #fcd1d9);
-  padding: 25px;
-  text-align: center;
-  border-top: 5px solid #ffffff;
-
-  p {
-    font-size: 1rem;
-    color: #6b4e71;
-    margin: 0 0 15px;
-  }
-
-  @media (max-width: 600px) {
-    padding: 15px;
-    p { font-size: 0.9rem; }
-  }
-`;
-
-const RSVPButton = styled.button`
-  background: linear-gradient(45deg, #f8a8c2, #ffb6c1);
-  color: #fff;
-  border: none;
-  padding: 15px 40px;
-  border-radius: 25px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 5px 20px rgba(248, 168, 194, 0.5);
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(248, 168, 194, 0.7);
-  }
-
-  @media (max-width: 600px) {
-    padding: 12px 30px;
-    font-size: 1rem;
-  }
-`;
-
 const Petals = styled.div`
   position: absolute;
   top: 0;
@@ -293,20 +253,23 @@ const App = () => {
   const [showConfetti, setShowConfetti] = useState(false);
   const [petals, setPetals] = useState([]);
 
-  // Generate petals
+  // Generate petals for both sides
   useEffect(() => {
-    const newPetals = Array.from({ length: 8 }).map((_, i) => ({
-      id: i,
-      left: `${Math.random() * 100}%`,
-      duration: `${5 + Math.random() * 5}s`,
+    const numberOfPetalsPerSide = 8; // Moderate number of petals
+    const leftPetals = Array.from({ length: numberOfPetalsPerSide }).map((_, i) => ({
+      id: `${i}-left`,
+      left: `${Math.random() * 5}%`, // Very close to left edge
+      duration: `${5 + Math.random() * 3}s`, // Smooth animation
+      top: `${Math.random() * 100}%`, // Random vertical distribution
     }));
-    setPetals(newPetals);
+    const rightPetals = Array.from({ length: numberOfPetalsPerSide }).map((_, i) => ({
+      id: `${i}-right`,
+      left: `${95 + Math.random() * 5}%`, // Very close to right edge
+      duration: `${5 + Math.random() * 3}s`,
+      top: `${Math.random() * 100}%`,
+    }));
+    setPetals([...leftPetals, ...rightPetals]);
   }, []);
-
-  const handleRSVP = () => {
-    setShowConfetti(true);
-    setTimeout(() => setShowConfetti(false), 5000);
-  };
 
   return (
     <>
@@ -323,7 +286,10 @@ const App = () => {
               className="petal"
               style={{
                 left: petal.left,
+                top: petal.top,
                 animationDuration: petal.duration,
+                opacity: 0.8, // Subtle transparency
+                transform: `rotate(${Math.random() * 360}deg)`, // Random initial rotation
               }}
             >
               🌸
