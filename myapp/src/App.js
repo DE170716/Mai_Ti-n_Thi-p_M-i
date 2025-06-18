@@ -310,7 +310,7 @@ const App = () => {
             </GraduateInfo>
             <EventDetails>
               <h3>Thông Tin Buổi Lễ</h3>
-              <p><strong>Thời gian:</strong> 9:00 AM, Chủ Nhật, ngày 21/06/2025</p>
+              <p><strong>Thời gian:</strong> 14:00 PM, Thứ Bảy, ngày 21/06/2025</p>
               <p><strong>Địa điểm:</strong> Sảnh A5, 459 Tôn Đức Thắng, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng</p>
             </EventDetails>
             <Message>
