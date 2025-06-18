@@ -304,7 +304,7 @@ const App = () => {
           <CardBody>
             <GraduateInfo>
               <div className="photo-frame"></div>
-              <h2>Nguyễn Thị Mai Tiên</h2>
+              <h2>Mai Tiên</h2>
               <p>Cử nhân ngành Khoa Học Tự Nhiên</p>
               <p>Trường Đại học Sư Phạm - ĐHĐN</p>
             </GraduateInfo>
