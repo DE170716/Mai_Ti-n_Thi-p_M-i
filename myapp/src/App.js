@@ -114,7 +114,7 @@ const GraduateInfo = styled.div`
     border: 8px solid #ffffff;
     margin: 0 auto 25px;
     position: relative;
-    background: url('/im.jpg') center/cover;
+    background: url('/im1.jpg') center/cover;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), 0 0 50px rgba(252, 209, 217, 0.3);
     animation: glow 2.5s infinite;
 
@@ -299,7 +299,7 @@ const App = () => {
         <Card>
           <CardHeader>
             <h1>Thiệp Mời Lễ Tốt Nghiệp</h1>
-            <p>Thân mời bạn đến chung vui ngày trọng đại của tôi!</p>
+            <p>Thân mời bạn đến chung vui ngày trọng đại của Mai Tiên!</p>
           </CardHeader>
           <CardBody>
             <GraduateInfo>
@@ -316,7 +316,7 @@ const App = () => {
             <Message>
               <p>
                 Sự hiện diện của bạn là niềm vinh hạnh lớn lao trong khoảnh khắc đáng nhớ này.
-                Hãy cùng tôi tạo nên một ngày thật ý nghĩa nhé!
+                Hãy cùng Tiên tạo nên một ngày thật ý nghĩa nhé!
               </p>
             </Message>
           </CardBody>
